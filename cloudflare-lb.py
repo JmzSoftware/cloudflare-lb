@@ -73,7 +73,11 @@ def healthcheck(host):
             
 def get_rec_id(name, host):
     for y in RECS:
-        if y['display_name'] == name and y['content'] == host and (y['type'] == "A" or y['type'] == "AAAA"):
+        r = name
+        if name == '@':
+                r = DOMAIN
+
+        if y['display_name'] == r and y['content'] == host and (y['type'] == "A" or y['type'] == "AAAA"):
             return y['rec_id']
     return False
 
