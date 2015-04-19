@@ -91,7 +91,7 @@ if __name__=="__main__":
         
         if INTERVAL >= 0:
             lapse = int(time.time() - start_time)
-            print "DONE: sleeping for {0} seconds".format(str(INTERVAL-lapse))
-            time.sleep(INTERVAL-lapse) #sleep for some set time seconds
+            print "DONE: sleeping for {0} seconds".format(str(abs(INTERVAL-lapse)))
+            time.sleep(abs(INTERVAL-lapse)) #sleep for some set time seconds
         else:
             exit()
